@@ -1,10 +1,3 @@
-// all-monster-sorts.c - Sort monsters by name and weight.
-
-/* The idea of sorting is simple: take unordered objects, and arrange them in an
-   order.  It has a lot of uses, so there's been a lot of work done with it.  Here,
-   we're going to demonstrate a few of the simpler, more classic sorting techniques.
-   */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -12,7 +5,7 @@
 #include <string.h>
 #include <time.h>
 
-/* Monster structure and helper functions - DO NOT MODIFY THESE. */
+/* Monster structure and helper functions */
 
 typedef struct monster {
 	int id;
@@ -158,8 +151,6 @@ void quick_sort_recursive(monster *list, int low_index, int high_index, int *com
       quick_sort_recursive(list, pivot_index + 1, high_index, comparisons, swaps, use_name, use_weight);
   }
 }
-
-/* Shell function for quick sort. */
 
 void quick_sort(monster *list, int n, int use_name, int use_weight)
 {
@@ -312,8 +303,6 @@ void insertion_sort_internal(monster *list, int n, int *comparisons, int *copies
         }
 }
 
-/* Shell for insertion sort. */
-
 void insertion_sort(monster *list, int n, int use_name, int use_weight)
 {
   int comparisons = 0;
@@ -330,9 +319,6 @@ void insertion_sort(monster *list, int n, int use_name, int use_weight)
   print_clocks(end_cpu - start_cpu);
   return;
 }
-
-/* Merge function for merge sort.  Merges sub-arrays [l1..h1] and [l2..h2].
-   Must have l2 = l1 + 1 or bad things will happen. */
 
 void merge_sort_merge(monster *list, int l1, int h1, int l2, int h2,
                       int *comparisons, int *copies, int *block_copies, int *mallocs,
